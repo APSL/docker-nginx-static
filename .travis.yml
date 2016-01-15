@@ -1,0 +1,17 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+script:
+  - ls -lah
+  - docker-compose up -d
+  - docker-compose ps
+  - wget http://localhost:/test.html -O test
+  - cat test | grep "Hello World"
+
+notifications:
+  email:
+    - eherraiz@apsl.net
