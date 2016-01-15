@@ -9,7 +9,7 @@ script:
   - ls -lah
   - docker-compose up -d
   - docker-compose ps
-  - wget http://localhost:/test.html -O test
+  - wget http://localhost:8888/test.html -O test
   - cat test | grep "Hello World"
 
 notifications:
